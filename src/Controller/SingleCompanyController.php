@@ -17,10 +17,11 @@ class SingleCompanyController extends AbstractController
     {
         $company = $companyRepository->findBy(["name" => $name]);
 
+
         if ($company) {
             return $this->render('single_company/index.html.twig', [
                 'controller_name' => 'SingleCompanyController',
-                'company' => $company
+                'company' => $company[0]
             ]);
         }
 

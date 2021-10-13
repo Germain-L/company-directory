@@ -6,17 +6,43 @@
 {# {% endfor %} #}
 {# </header> #}
 
+<style>
+    ul {
+        display: flex;
+        flex-direction: row;
+    }
+
+    li {
+        width: 100px;
+    }
+</style>
+
 <header>
     <a href="{{ path('all_companies') }}">
-        <h1>Header</h1>
+        <h1>Company directory</h1>
     </a>
     <nav>
         <ul>
             {% for category in categoriesVar.getCategoriesVar %}
                 <li>
-                    <a>{{ category }}</a>
+                    <a href="{{ path('single_category', {name: category}) }}">{{ category }}</a>
                 </li>
             {% endfor %}
+            <li>
+                <a href="{{ path('company_index') }}">CRUD company</a>
+            </li>
+            <li>
+                <a href="{{ path('category_index') }}">CRUD category</a>
+            </li>
         </ul>
     </nav>
+
+    <form action="" method="get" class="form-example">
+        <div>
+            <label for="searchTerm">Search</label>
+            <input type="text" name="searchTerm">
+        </div>
+        <input type="submit" value="search">
+    </form>
+
 </header>
