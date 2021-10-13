@@ -19,8 +19,7 @@
     {% for company in companies %}
 
 
-        <!-- TODO: FIND HOW TO ADD WILDCARDS IN PATH : THIS DOES NOT WORK -->
-        <a href="{{ path( "admin/company/" ~ company.id ) }}">
+        <a href="{{ path("single_company", {name: company.name} ) }}">
             <h1>{{ company.name }}</h1>
             <img src="{{ asset(company.imagePath) }}" height="150" alt="€{{ company.name }}">
         </a>

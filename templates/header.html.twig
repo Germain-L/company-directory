@@ -1,0 +1,22 @@
+{# <header> #}
+{# {% for categoryVar in categoriesVar.getCategoriesVar %} #}
+{# <li> #}
+{# <a href="#">{{ categorieVar }}</a> #}
+{# </li> #}
+{# {% endfor %} #}
+{# </header> #}
+
+<header>
+    <a href="{{ path('all_companies') }}">
+        <h1>Header</h1>
+    </a>
+    <nav>
+        <ul>
+            {% for category in categoriesVar.getCategoriesVar %}
+                <li>
+                    <a>{{ category }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </nav>
+</header>
