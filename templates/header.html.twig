@@ -6,17 +6,6 @@
 {# {% endfor %} #}
 {# </header> #}
 
-<style>
-    ul {
-        display: flex;
-        flex-direction: row;
-    }
-
-    li {
-        width: 100px;
-    }
-</style>
-
 <header>
     <a href="{{ path('all_companies') }}">
         <h1>Company directory</h1>
@@ -37,7 +26,7 @@
         </ul>
     </nav>
 
-    <form action="" method="get" class="form-example">
+    <form action="{{ path('all_companies') }}" method="get" class="form-example">
         <div>
             <label for="searchTerm">Search</label>
             <input type="text" name="searchTerm">
