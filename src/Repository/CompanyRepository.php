@@ -19,6 +19,16 @@ class CompanyRepository extends ServiceEntityRepository
         parent::__construct($registry, Company::class);
     }
 
+    public function findByNameField(string $query)
+    {
+        return $this->createQueryBuilder('c')
+            ->where('c.name LIKE :val')
+            ->setParameter('val', '%'.$query.'%')
+            ->getQuery()
+            ->getResult();
+    }
+
+
     // /**
     //  * @return Company[] Returns an array of Company objects
     //  */

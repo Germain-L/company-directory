@@ -27,7 +27,7 @@ class AllCompaniesController extends AbstractController
 
         return $this->render('all_companies/index.html.twig', [
             'controller_name' => 'AllCompaniesController',
-            'companies' => $companyRepository->findBy(["name" => $search]),
+            'companies' => $companyRepository->findByNameField($search),
         ]);
     }
 }
